@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+:root {
+  --theme-dynamic-palette-50: #f1f1f1;
+  --theme-dynamic-palette-100: #e0e0e0;
+  --theme-dynamic-palette-200: #c7c7c7;
+  --theme-dynamic-palette-300: #a0a0a0;
+  --theme-dynamic-palette-400: #8a8a8a;
+  --theme-dynamic-palette-500: #707070; /* Example color */
+  --theme-dynamic-palette-600: #595959;
+  --theme-dynamic-palette-700: #444444;
+  --theme-dynamic-palette-800: #2e2e2e;
+  --theme-dynamic-palette-900: #1a1a1a;
+
+  --theme-dynamic-palette-A100: #fff;
+  --theme-dynamic-palette-A200: #fff;
+  --theme-dynamic-palette-A400: #fff;
+  --theme-dynamic-palette-A700: #fff;
+
+  --theme-dynamic-palette-contrast-50: #000000;
+  --theme-dynamic-palette-contrast-100: #000000;
+  --theme-dynamic-palette-contrast-200: #000000;
+  --theme-dynamic-palette-contrast-300: #000000;
+  --theme-dynamic-palette-contrast-400: #000000;
+  --theme-dynamic-palette-contrast-500: #ffffff;
+  --theme-dynamic-palette-contrast-600: #ffffff;
+  --theme-dynamic-palette-contrast-700: #ffffff;
+  --theme-dynamic-palette-contrast-800: #ffffff;
+  --theme-dynamic-palette-contrast-900: #ffffff;
+
+  --theme-dynamic-palette-contrast-A100: #000000;
+  --theme-dynamic-palette-contrast-A200: #000000;
+  --theme-dynamic-palette-contrast-A400: #000000;
+  --theme-dynamic-palette-contrast-A700: #000000;
+}

@@ -1,0 +1,40 @@
+<div class="expandable-selection">
+  <!-- Заголовок с количеством выбранных элементов -->
+  <div class="header" (click)="toggleDropdown()">
+    <!-- Если список закрыт, отображаем количество выбранных этапов -->
+    <span *ngIf="!isOpen"> Выбрано: {{ selectedFunnels }} воронки, {{ selectedStages }} этапов
+</span>
+    <!-- Если список открыт, показываем чекбокс "Выбрать все / Снять выделение" -->
+    <div *ngIf="isOpen" class="select-all">
+      <mat-checkbox
+        [indeterminate]="isPartialSelectedAll()"
+        [checked]="isAllSelectedAll()"
+        (change)="toggleSelectAllCategories()"
+        (click)="$event.stopPropagation()"
+      >
+        {{ isAllSelectedAll() || isPartialSelectedAll() ? 'Снять выделение' : 'Выбрать все' }}
+      </mat-checkbox>
+    </div>
+  </div>
+
+  <!-- Основной контейнер со списком -->
+  <div class="body" *ngIf="isOpen">
+    <div *ngFor="let category of categories">
+      <!-- Заголовок категории -->
+      <div class="category-header" (click)="toggleCategory(category)">
+        <div class="category-title">{{ category.name }}</div>
+        <div class="category-items" *ngIf="category.isOpen">
+          <mat-checkbox
+            *ngFor="let stage of category.stages"
+            [(ngModel)]="stage.selected"
+            [ngStyle]="{ 'background-color': stage.color, 'color': '#fff' }"
+            (ngModelChange)="onStageSelectionChange()"
+            (click)="$event.stopPropagation()"
+          >
+            {{ stage.name }}
+          </mat-checkbox>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

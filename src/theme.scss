@@ -1,0 +1,61 @@
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+$dynamic-theme-palette: (
+  50: var(--theme-dynamic-palette-50),
+  100: var(--theme-dynamic-palette-100),
+  200: var(--theme-dynamic-palette-200),
+  300: var(--theme-dynamic-palette-300),
+  400: var(--theme-dynamic-palette-400),
+  500: var(--theme-dynamic-palette-500),
+  600: var(--theme-dynamic-palette-600),
+  700: var(--theme-dynamic-palette-700),
+  800: var(--theme-dynamic-palette-800),
+  900: var(--theme-dynamic-palette-900),
+  A100: var(--theme-dynamic-palette-A100),
+  A200: var(--theme-dynamic-palette-A200),
+  A400: var(--theme-dynamic-palette-A400),
+  A700: var(--theme-dynamic-palette-A700),
+  contrast: (
+    50: var(--theme-dynamic-palette-contrast-50),
+    100: var(--theme-dynamic-palette-contrast-100),
+    200: var(--theme-dynamic-palette-contrast-200),
+    300: var(--theme-dynamic-palette-contrast-300),
+    400: var(--theme-dynamic-palette-contrast-400),
+    500: var(--theme-dynamic-palette-contrast-500),
+    600: var(--theme-dynamic-palette-contrast-600),
+    700: var(--theme-dynamic-palette-contrast-700),
+    800: var(--theme-dynamic-palette-contrast-800),
+    900: var(--theme-dynamic-palette-contrast-900),
+    A100: var(--theme-dynamic-palette-contrast-A100),
+    A200: var(--theme-dynamic-palette-contrast-A200),
+    A400: var(--theme-dynamic-palette-contrast-A400),
+    A700: var(--theme-dynamic-palette-contrast-A700),
+  ),
+);
+
+$dynamic-theme-primary: mat.define-palette($dynamic-theme-palette, 500);
+
+$dynamic-theme-accent: mat.define-palette(
+    $dynamic-theme-palette,
+    A200,
+    A100,
+    A400
+);
+
+$dynamic-theme: mat.define-light-theme(
+    (
+      color: (
+        primary: $dynamic-theme-primary,
+        accent: $dynamic-theme-accent,
+      ),
+      typography: mat.define-typography-config(),
+      density: 0,
+    )
+);
+
+@include mat.all-component-themes($dynamic-theme);
+@include mat.all-component-bases($dynamic-theme);
+@include mat.all-component-typographies($dynamic-theme);
+@include mat.all-component-densities($dynamic-theme);
